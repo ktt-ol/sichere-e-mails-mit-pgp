@@ -55,29 +55,37 @@
 }
 
 \frame{
-	\frametitle{Lösungsvorschlag: Verschlüsselung}
-	\begin{itemize}
-		\setlength\itemsep{0em}
-		\item wandelt Klartext in unlesbares Kauderwelsch um
-		\item kann mit Kenntnis über Verschlüsselung und dem Schlüssel umgekehrt werden
-		\item üblicherweise ein mathematisches Verfahren mit geheimem Eingabewert
-	\end{itemize}\pause
-	\begin{itemize}
-		\item symmetrisch
+	\frametitle{Lösungsvorschlag: Verschlüsselung}	
+	\begin{multicols}{2}
+		\begin{center}
+			\includegraphics[scale=0.3]{images/encrypted-presentation}
+		\end{center}
+		\columnbreak
 		\begin{itemize}
-			\item ver- und entschlüsseln mit selbem Schlüssel und selben Verfahren
-		\end{itemize}
-	\end{itemize}\pause
-	\begin{itemize}
-		\item asymmetrisch
+			\setlength\itemsep{0em}
+			\item Klartext $\rightarrow$ Geheimtext
+			\item mathematisches Verfahren
+			\item geheime Zahl als ,,Passwort''
+		\end{itemize}\pause
 		\begin{itemize}
-			\item ver- unt entschlüsseln mit unterschiedlichen Schlüsseln und selbem Verfahren
+			\item symmetrisch
+			\begin{itemize}
+				\item selbes Verfahren
+				\item selber Schlüssel
+			\end{itemize}
+		\end{itemize}\pause
+		\begin{itemize}
+			\item asymmetrisch
+			\begin{itemize}
+				\item selbes Verfahren
+				\item unterschiedliche Schlüssel
+			\end{itemize}
 		\end{itemize}
-	\end{itemize}
+	\end{multicols}
 }
 
 \frame{
- 	\frametitle{Unverschlüsselung}
+ 	\frametitle{Abgrenzung: Verschlüsselung}
 	Was ist damit nicht gemeint?
 	\begin{itemize}
 		\item Transportwegeverschlüsselung (TLS, ...)
