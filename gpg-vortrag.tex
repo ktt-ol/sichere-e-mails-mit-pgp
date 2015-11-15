@@ -24,7 +24,7 @@
 
 \begin{document}
 \titlepage
-\hfill\scalebox{.6}{\href{http://creativecommons.org/licenses/by-sa/3.0}{CC-BY-SA 3.0}}
+\scalebox{.6}{\url{https://github.com/ktt-ol/sichere-e-mails-mit-pgp}}\hfill\scalebox{.6}{\href{http://creativecommons.org/licenses/by-sa/3.0}{CC-BY-SA 3.0}}
 
 \frame{
 	\frametitle{Wer sind wir?}
@@ -55,29 +55,38 @@
 }
 
 \frame{
-	\frametitle{Lösungsvorschlag: Verschlüsselung}
-	\begin{itemize}
-		\setlength\itemsep{0em}
-		\item wandelt Klartext in unlesbares Kauderwelsch um
-		\item kann mit Kenntnis über Verschlüsselung und dem Schlüssel umgekehrt werden
-		\item üblicherweise ein mathematisches Verfahren mit geheimem Eingabewert
-	\end{itemize}\pause
-	\begin{itemize}
-		\item symmetrisch
+	\frametitle{Lösungsvorschlag: Verschlüsselung}	
+	\begin{multicols}{2}
+		\begin{center}
+			\includegraphics[scale=0.3]{images/encrypted-presentation}
+		\end{center}
+		\columnbreak
 		\begin{itemize}
-			\item ver- und entschlüsseln mit selbem Schlüssel und selben Verfahren
-		\end{itemize}
-	\end{itemize}\pause
-	\begin{itemize}
-		\item asymmetrisch
+			\setlength\itemsep{0em}
+			\item Klartext $\rightarrow$ Geheimtext
+			\item mathematisches Verfahren
+			\item geheime Zahl als ,,Passwort''
+		\end{itemize}\pause
 		\begin{itemize}
-			\item ver- unt entschlüsseln mit unterschiedlichen Schlüsseln und selbem Verfahren
+			\item symmetrisch
+			\begin{itemize}
+				\item selbes Verfahren
+				\item selber Schlüssel
+			\end{itemize}
+		\end{itemize}\pause
+		\begin{itemize}
+			\item asymmetrisch
+			\begin{itemize}
+				\item selbes Verfahren
+				\item unterschiedliche Schlüssel
+			\end{itemize}
 		\end{itemize}
-	\end{itemize}
+	\end{multicols}
 }
 
 \frame{
- 	\frametitle{Was wir nicht meinen...}
+ 	\frametitle{Abgrenzung: Verschlüsselung}
+	Was ist damit nicht gemeint?
 	\begin{itemize}
 		\item Transportwegeverschlüsselung (TLS, ...)
 		\item DE-Mail (jemand anderes hat auch einen Key)
@@ -127,8 +136,8 @@
 \frame{
 	\frametitle{Cryptoparties}
 	\begin{center}
-		% TODO: Foto eines Fingerprints machen und einfügen
-		\includegraphics[scale=0.11]{images/9392567326_65566b7a2a_k}\\[0.1cm]
+		\includegraphics[scale=0.45]{images/fingerprint.png}\vspace{0.5em}
+		\includegraphics[scale=0.095]{images/9392567326_65566b7a2a_k}\\[0.1cm]
 		\scalebox{.6}{\href{https://creativecommons.org/licenses/by/2.0/}{CC-BY 2.0} \href{https://www.flickr.com/photos/67481069@N06/9392567326/in/photolist-dgF9o5-dgFfuU-jfFAJZ-Aahk2f-zfxU6C-zUZu93-derAa9-Aczqq4-zfxQK9-AdxznB-zfxXq3-zV4Y9p-AaheUm-AcztSV-zfxSg5-nRTQw1-AahmXQ-nSfhAn-AahnKw-zUZxHs-Abpgpm-dQPB55-dQPB6U-dQPB5s-zfFUrR-Aczz1a-AdxwMr-Adxwpn-AczwBc-zfFYEF-Adxrqe-AczrPX-zUY3t9-zfFVhP-Abpoh9-f76gGL-dQPB2A-dQPB3m-dgjJfx-AczogV-zUYbys-AdxumK-AdxtAM-jHvNzD-fiZn2Y-edbqzd-fiK8LB-d54cjd-qWi8VV-npuuAT}{wbritzl}}\\\pause
 		\begin{itemize}
 			\setlength\itemsep{0em}
