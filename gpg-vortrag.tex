@@ -13,7 +13,7 @@
 \hypersetup{
 	colorlinks=true,
 	linkcolor=white,
-	urlcolor=black,
+	urlcolor=blue,
 	citecolor=black
 }
 
@@ -77,8 +77,7 @@
 }
 
 \frame{
- 	\frametitle{Unverschlüsselung}
-	Was ist damit nicht gemeint?
+ 	\frametitle{Was wir nicht meinen...}
 	\begin{itemize}
 		\item Transportwegeverschlüsselung (TLS, ...)
 		\item DE-Mail (jemand anderes hat auch einen Key)
@@ -88,7 +87,7 @@
 \frame{
 	\frametitle{Asymmetrische Verschlüsselung}
 	\begin{center}
-	\includegraphics[scale=0.3]{images/Orange_blue_public_private_keygeneration_de}
+		\includegraphics[scale=0.3]{images/Orange_blue_public_private_keygeneration_de}
 	\end{center}
 }
 
@@ -101,18 +100,19 @@
 
 \frame{
 	\frametitle{Problem: Vertrauenswürdigkeit}
-	\begin{center}
-		\begin{block}{Problem:}
-			Wer garantiert uns, dass Bob wirklich der Absender ist?
-		\end{block}
-		\vfill
+	\begin{block}{Problem:}
+		Wer garantiert uns, dass Bob wirklich der Absender ist?
+	\end{block}
+	\vfill
+	\begin{itemize}
+		\item Idee: zentraler Ansatz
 		\begin{itemize}
-			\item Idee: zentraler Ansatz
-			\begin{itemize}
-				\item indirekter Austausch über Dritte (z.B. Browser oder Mailprogramm)
-				\item Hierarchie/Zertifikatsliste (schonmal reingeschaut?)
-			\end{itemize}
+			\item Indirekter Austausch über Dritte (z.B. Browser oder Mailprogramm)
+			\item Hierarchie/Zertifikatsliste (schonmal reingeschaut?)
 		\end{itemize}
+	\end{itemize}
+	\begin{center}
+		\includegraphics[scale=0.4]{images/paypal_example.png}
 	\end{center}
 }
 
@@ -142,7 +142,7 @@
 
 \frame{
  	\frametitle{Signatur}
-	,,Nebeneffekt`` der Authentizitätsprüfung
+	,,Nebeneffekt` der Authentizitätsprüfung
 	\begin{center}
 		\includegraphics[scale=0.38]{images/Orange_blue_digital_signature_de}
 	\end{center}
@@ -151,8 +151,11 @@
 \frame{
 	\frametitle{GPG}
 	Was ist jetzt eigentlich GPG?
+	\begin{center}
+		\includegraphics[scale=0.38]{images/gnuPG.png}\\
+		{\tiny \url{https://gnupg.org}}
+	\end{center}
 	\begin{itemize}
-		% TODO: Hier noch Links einfügen
 		\item<1-> ,,Gnu Privacy Guard``, Open Source-Implementierung von OpenPGP
 		\item<1-> ,,PGP`` (,,Pretty Good Privacy``), alternative, nun proprietäre Implementierung
 		\item<1-> Sehr verbreitet im Open Source Umfeld
@@ -216,7 +219,7 @@
 		\item<6-> Upload-Varianten:
 			\begin{description}
 				\item<6->[Unsicher] Direkter Upload auf Keyserver
-				\item<6->[Sicher] Verschicken des signiergen Keys per Mail {\bf an die signierten Mailadressen}
+				\item<6->[Sicher] Verschicken des signierten Keys per Mail {\bf an die signierten Mailadressen}
 			\end{description}
 	\end{itemize}
 }
