@@ -1,9 +1,10 @@
-\documentclass[xcolor=dvipsnames]{beamer}
+\documentclass[xcolor=dvipsnames, handout]{beamer}
 \usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage[ngerman]{babel}
 \usepackage{multicol}
 \usepackage{graphicx}
+\graphicspath{{images/}}
 
 % appearance
 \usetheme{Boadilla}
@@ -18,9 +19,9 @@
 }
 
 % content
-\title{Sichere E-Mails mit PGP}
+\title[Sichere E-Mails mit PGP]{\glqq Meine Mails gehören mir!\grqq \\ Workshop zur E-Mail-Verschlüsselung}
 \author{Peter Gewald \& Manuel Groß}
-\date{2015-11-15}
+\date{2015-11-28}
 
 \begin{document}
 \titlepage
@@ -30,11 +31,11 @@
 	\frametitle{Wer sind wir?}
 	\center{
 		\begin{multicols}{2}
-			\includegraphics[scale=0.4]{images/ccc-ol-black}\\[0.1cm]
+			\includegraphics[scale=0.4]{ccc-ol-black}\\[0.1cm]
 			\url{https://ccc-ol.de/}\\
 			\columnbreak
 			\ \\[0.5cm]
-			\includegraphics[scale=0.38]{images/mainframe_logo}\\[0.1cm]
+			\includegraphics[scale=0.38]{mainframe_logo}\\[0.1cm]
 			\url{https://mainframe.io/}
 		\end{multicols}
 	}
@@ -43,7 +44,7 @@
 \frame{
 	\frametitle{Was ist eigentlich unser Problem?}
 	\center{
-		\includegraphics[scale=0.2]{images/-FsA14_-_Freiheit_statt_Angst_027_(14898399419)_(2)}\\
+		\includegraphics[scale=0.2]{-FsA14_-_Freiheit_statt_Angst_027_(14898399419)_(2)}\\
 		\scalebox{.6}{\href{https://creativecommons.org/licenses/by-sa/2.0/deed.en}{CC-BY-SA 2.0} \href{https://commons.wikimedia.org/wiki/File:-FsA14_-_Freiheit_statt_Angst_027_(14898399419)_(2).jpg}{Markus Winkler}}\\[0.2cm]\pause
 		\begin{itemize}
 			\setlength\itemsep{0em}
@@ -58,7 +59,7 @@
 	\frametitle{Lösungsvorschlag: Verschlüsselung}	
 	\begin{multicols}{2}
 		\begin{center}
-			\includegraphics[scale=0.3]{images/encrypted-presentation}
+			\includegraphics[scale=0.3]{encrypted-presentation}
 		\end{center}
 		\columnbreak
 		\begin{itemize}
@@ -103,14 +104,14 @@
 \frame{
 	\frametitle{Asymmetrische Verschlüsselung}
 	\begin{center}
-		\includegraphics[scale=0.3]{images/Orange_blue_public_private_keygeneration_de}
+		\includegraphics[scale=0.3]{Orange_blue_public_private_keygeneration_de}
 	\end{center}
 }
 
 \frame{
 	\frametitle{Asymmetrische Verschlüsselung}
 	\begin{center}
-		\includegraphics[scale=0.4]{images/Orange_blue_public_key_cryptography_de}\\
+		\includegraphics[scale=0.4]{Orange_blue_public_key_cryptography_de}\\
 	\end{center}
 }
 
@@ -128,14 +129,14 @@
 		\end{itemize}
 	\end{itemize}
 	\begin{center}
-		\includegraphics[scale=0.4]{images/paypal_example.png}
+		\includegraphics[scale=0.4]{paypal_example.png}
 	\end{center}
 }
 
 \frame{
 	\frametitle{Unterschiedliche Ansätze: Verteilt}
 	\begin{center}
-		\includegraphics[scale=0.17]{images/Web_of_Trust_2}\\[0.1cm]
+		\includegraphics[scale=0.17]{Web_of_Trust_2}\\[0.1cm]
 		\scalebox{.6}{\href{http://creativecommons.org/licenses/by-sa/3.0}{CC-BY-SA 3.0} \href{https://de.wikipedia.org/wiki/Web_of_Trust\#/media/File:Web_of_Trust_2.svg}{Hauke Laging}}
 	\end{center}
 }
@@ -143,8 +144,8 @@
 \frame{
 	\frametitle{Cryptoparties}
 	\begin{center}
-		\includegraphics[scale=0.45]{images/fingerprint.png}\vspace{0.4em}\\
-		\includegraphics[scale=0.25]{images/9392567326_65566b7a2a_k}\\[0.1cm]
+		\includegraphics[scale=0.45]{fingerprint.png}\vspace{0.4em}\\
+		\includegraphics[scale=0.25]{9392567326_65566b7a2a_k}\\[0.1cm]
 		\scalebox{.6}{\href{https://creativecommons.org/licenses/by/2.0/}{CC-BY 2.0} \href{https://www.flickr.com/photos/67481069@N06/9392567326/in/photolist-dgF9o5-dgFfuU-jfFAJZ-Aahk2f-zfxU6C-zUZu93-derAa9-Aczqq4-zfxQK9-AdxznB-zfxXq3-zV4Y9p-AaheUm-AcztSV-zfxSg5-nRTQw1-AahmXQ-nSfhAn-AahnKw-zUZxHs-Abpgpm-dQPB55-dQPB6U-dQPB5s-zfFUrR-Aczz1a-AdxwMr-Adxwpn-AczwBc-zfFYEF-Adxrqe-AczrPX-zUY3t9-zfFVhP-Abpoh9-f76gGL-dQPB2A-dQPB3m-dgjJfx-AczogV-zUYbys-AdxumK-AdxtAM-jHvNzD-fiZn2Y-edbqzd-fiK8LB-d54cjd-qWi8VV-npuuAT}{wbritzl}}\\\pause
 		\begin{itemize}
 			\setlength\itemsep{0em}
@@ -158,7 +159,7 @@
 \frame{
  	\frametitle{Signatur}
 	\begin{center}
-		\includegraphics[scale=0.38]{images/Orange_blue_digital_signature_de}
+		\includegraphics[scale=0.38]{Orange_blue_digital_signature_de}
 	\end{center}
 }
 
@@ -166,7 +167,7 @@
 	\frametitle{GPG}
 	Was ist jetzt eigentlich GPG?
 	\begin{center}
-		\includegraphics[scale=0.38]{images/gnuPG.png}\\
+		\includegraphics[scale=0.38]{gnuPG.png}\\
 		{\tiny \url{https://gnupg.org}}
 	\end{center}
 	\begin{itemize}
@@ -176,15 +177,62 @@
 		\item<2-> Eher ungebräuchlich im geschäftlichen Umfeld
 		\item<2-> Web of Trust Prinzip
 		\item<3-> Plugins für viele Clients
-		\item<3-> Metadaten nicht verschlüsselt!
-		\item<3-> Teilweise Probleme mit Wrapping (z.B. \href{https://lwn.net/Articles/584542/}{Thunderbird})
+		\item<3-> Metadaten {\bf nicht} verschlüsselt!
+	%	\item<3-> Teilweise Probleme mit Wrapping (z.B. \href{https://lwn.net/Articles/584542/}{Thunderbird})
 	\end{itemize}
+}
+
+\frame{
+	\frametitle{GPG}
+		\begin{itemize}
+			\item {\bf Demo:} Mail (Source, Header)
+		\end{itemize}
+}
+
+\frame{
+	\frametitle{Beispiel: GPG in MS Outlook}
+		\begin{itemize}
+			\item Gpg4win: OpenPGP und S/MIME
+			\item MS Outlook 2003/2007/2010 und 2013 (32 Bit)
+			\item Windows XP, Vista, 7 and 8
+			\item {\footnotesize \url{http://gpg4win.de/handbuecher/einsteiger\_7.html}}
+		\end{itemize}
+		\begin{figure}[H]
+			\includegraphics[scale=0.35]{gpgol.png}\\
+			{\scriptsize \url{http://www.gpg4win.org/img/sc-gpgol-sendSignEncryptedMail\_de.png}}
+		\end{figure}
+}
+
+\frame{
+	\frametitle{Beispiel: GPG in Thunderbird}
+	\begin{itemize}
+		\item Ebenfalls Gpg4win installlieren
+		\item Zusätzliches Plugin für Thunderbird nötig: Enigmail
+		\item Anleitung {\footnotesize \url{http://blog.ch-becker.de/2011/04/27/pgpgpg-unter-windows-mit-thunderbird-emails-verschlusseln/}}
+	\end{itemize}
+	\begin{figure}[H]
+		\includegraphics[scale=0.35]{enigmail_suche.png}\\
+		{\scriptsize \url{http://blog.ch-becker.de/wp-content/uploads/2011/04/enigmail\_suche.png}}
+	\end{figure}
+
+}
+
+\frame{
+	\frametitle{Beispiel: GPG mit MAC OS X}
+	\begin{itemize}
+		\item \url{https://gpgtools.org/}
+	\end{itemize}
+	\begin{figure}[H]
+		\includegraphics[scale=0.35]{gpg_mac.png}\\
+		{\scriptsize \url{https://gpgtools.org/images/screenshots/gka-create-key.1375965203.png}}
+	\end{figure}
+
 }
 
 \frame{
 	\frametitle{PGP funktioniert!}
 	\begin{center}
-		\includegraphics[scale=0.16]{images/snowden}
+		\includegraphics[scale=0.16]{snowden}
 	\end{center}
 }
 
@@ -199,6 +247,24 @@
 }
 
 \frame{
+	\frametitle{Vorgehen}
+	{\bf Erstellen (einmalig):}
+	\begin{enumerate}
+		\item Schlüsselpaar erstellen
+		\item Optional: Auf Schlüsselserver (keyserver) laden
+	\end{enumerate}
+	{\bf Signieren:}
+	\begin{enumerate}
+		\item Fremden Schlüssel (public key) laden 
+		\item Fingerprint prüfen/vergleichen
+		\item Identität der Person prüfen (Ausweis)
+		\item Schlüssel signieren
+		\item Signieren Schlüssel auf Schlüsselserver laden oder per Mail schicken
+	\end{enumerate}
+
+}
+
+\frame{
 	\frametitle{GPG unter Linux - Konfiguration}
 	\begin{itemize}
 		\item Config: $\sim$/.gnupg/gpg.conf
@@ -206,6 +272,14 @@
 		\item Vorteil: Kein manuelles {\tt --keyserver <keyserver>}
 	\end{itemize}
 }
+
+\frame{
+	\frametitle{GPG - Live}
+		\begin{itemize}
+			\item {\bf Demo:} Schlüssel erstellen, Signieren
+		\end{itemize}
+}
+
 \frame{
 	\frametitle{GPG unter Linux - Schlüsselpaar erstellen}
 	\begin{itemize}
@@ -272,6 +346,15 @@
 		\item<5-> ggf. direkt nach Generierung erzeugen
 		\item<5-> Besser: Backup private key!
 	\end{itemize}
+}
+
+\frame{
+	\frametitle{Fazit}
+		\begin{itemize}
+			\item Ende-zu-Ende Verschlüsselung als sicherer Kommunikationsweg
+			\item Metadaten nicht verschlüsselt!
+			\item Je mehr Nutzer, desto funktionaler!
+		\end{itemize}
 }
 
 \frame{
