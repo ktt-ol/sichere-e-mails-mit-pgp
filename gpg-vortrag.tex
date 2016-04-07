@@ -56,6 +56,24 @@
 }
 
 \frame{
+	\frametitle{Sicherheitsziele}	
+		\begin{enumerate}
+			\item Verschlüsselung
+				\begin{itemize}
+					\item Text kann nicht von anderen gelesen werden\vspace{1em}
+				\end{itemize}
+			\item Authentizität 
+				\begin{itemize}
+					\item Identität des Absenders sichergestellt\vspace{1em}
+				\end{itemize}
+			\item Integrität
+				\begin{itemize}
+					\item Nachricht nicht von dritten verändert
+				\end{itemize}
+		\end{enumerate}
+}
+
+\frame{
 	\frametitle{Lösungsvorschlag: Verschlüsselung}	
 	\begin{multicols}{2}
 		\begin{center}
@@ -86,20 +104,25 @@
 }
 
 \frame{
- 	\frametitle{Abgrenzung: Verschlüsselung}
+ 	\frametitle{Ziel 1: Verschlüsselung (Abgrenzung)}
 	Was ist damit nicht gemeint?\\[0.5cm]	
 	\begin{itemize}			
-		\item Transportverschlüsselung		
-			\begin{itemize}				
-				\item SSL			
-				\item TLS\\				
-				$\rightarrow$ Nachrichten am Speicherort ungeschützt	
-			\end{itemize}		
+		\item Webseiten (http(s)) \\
+			$\rightarrow$ Ende-zu-Ende Verschlüsselung (Transportverschlüsselung)
+		\item Messenger\\
+			$\rightarrow$ Verschieden: Transportverschlüsselung, manchmal Ende-zu-Ende Verschlüsselung 
+			% Messengerbeispiele pro "Verschlüssenungsart" als Tabelle
+			% ...
+			% Ricochet (TOR), Conversations, Threema, Signal 
+		\item Mail\\
+			$\rightarrow$ Per default unverschlüsselt  \\
+			$\rightarrow$ Typisch zum Server, nicht Ende-zu-Ende!
 		\item DE-Mail		
 			\begin{itemize}				
 				\item per default nur abschnittweise verschlüsselt		
 			\end{itemize}	
 	\end{itemize} 
+	$\Rightarrow$ Nachrichten am Speicherort ungeschützt	
 }		  
 \frame{
 	\frametitle{Asymmetrische Verschlüsselung}
@@ -116,11 +139,19 @@
 }
 
 \frame{
-	\frametitle{Problem: Vertrauenswürdigkeit}
+	\frametitle{Ziel 2: Authentizität (Vertrauen)}
 	\begin{block}{Problem:}
 		Wer garantiert uns, dass Bob wirklich der Absender ist?
 	\end{block}
 	\vfill
+	Ansätze:
+	\begin{description}
+		\item[a)] Zentral
+		\item[b)] Dezentral
+	\end{description}
+}
+\frame {
+	\frametitle{Ansatz a) Zentral (Server)}
 	\begin{itemize}
 		\item Idee: zentraler Ansatz
 		\begin{itemize}
@@ -134,7 +165,7 @@
 }
 
 \frame{
-	\frametitle{Unterschiedliche Ansätze: Verteilt}
+	\frametitle{Ansatz b) Dezentral: Vertrauensnetzwerk (Web of trust)}
 	\begin{center}
 		\includegraphics[scale=0.17]{Web_of_Trust_2}\\[0.1cm]
 		\scalebox{.6}{\href{http://creativecommons.org/licenses/by-sa/3.0}{CC-BY-SA 3.0} \href{https://de.wikipedia.org/wiki/Web_of_Trust\#/media/File:Web_of_Trust_2.svg}{Hauke Laging}}
@@ -157,7 +188,7 @@
 }
 
 \frame{
- 	\frametitle{Signatur}
+ 	\frametitle{Ziel 2 und 3: Authentizität und Intigrität mittels Signatur}
 	\begin{center}
 		\includegraphics[scale=0.38]{Orange_blue_digital_signature_de}
 	\end{center}
@@ -195,7 +226,7 @@
 			\item Gpg4win: OpenPGP und S/MIME
 			\item MS Outlook 2003/2007/2010 und 2013 (32 Bit)
 			\item Windows XP, Vista, 7 and 8
-			\item {\footnotesize \url{http://gpg4win.de/handbuecher/einsteiger\_7.html}}
+			\item {\footnotesize \url{https://www.gpg4win.de/doc/de/gpg4win-compendium_11.html}}
 		\end{itemize}
 		\begin{figure}[H]
 			\includegraphics[scale=0.35]{gpgol.png}\\
@@ -236,15 +267,6 @@
 	\end{center}
 }
 
-\frame{
-	\frametitle{GPG unter Linux - Installation}
-	{\bf Debian Pakete:}
-	\begin{itemize}
-		\item gnupg2
-		\item signing-party (für caff)
-		\item msmtp
-	\end{itemize}
-}
 
 \frame{
 	\frametitle{Vorgehen}
@@ -255,13 +277,24 @@
 	\end{enumerate}
 	{\bf Signieren:}
 	\begin{enumerate}
+		\setcounter{enumi}{2} 
 		\item Fremden Schlüssel (public key) laden 
 		\item Fingerprint prüfen/vergleichen
-		\item Identität der Person prüfen (Ausweis)
+		\item $\rightarrow$ Identität der Person prüfen (Ausweis) $\leftarrow$
 		\item Schlüssel signieren
 		\item Signieren Schlüssel auf Schlüsselserver laden oder per Mail schicken
 	\end{enumerate}
 
+}
+
+\frame{
+	\frametitle{GPG unter Linux - Installation}
+	{\bf Debian Pakete:}
+	\begin{itemize}
+		\item gnupg2
+		\item signing-party (für caff)
+		\item msmtp
+	\end{itemize}
 }
 
 \frame{
@@ -281,7 +314,7 @@
 }
 
 \frame{
-	\frametitle{GPG unter Linux - Schlüsselpaar erstellen}
+	\frametitle{1: GPG unter Linux - Schlüsselpaar erstellen}
 	\begin{itemize}
 		\item {\tt \$ gpg --gen-key}
 		\begin{itemize}
@@ -298,6 +331,11 @@
 
 \frame{
 	\frametitle{GPG unter Linux - Signieren}
+	% Signaturen nummerieren
+	\begin{enumerate}
+		\setcounter{enumi}{2} 
+		\item \mbox{}
+	\end{enumerate}
 	\begin{itemize}
 		\item<1-> Laden des fremden Keys: \\ \qquad {\tt \$ gpg --recv-keys <key-id>}
 		\item<2-> Prüfung des Fingerprints: \\ \qquad {\tt \$ gpg --fingerprint <key-id>}
